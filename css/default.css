@@ -1,0 +1,19 @@
+body {
+	background-color: #E5DDD5;
+}
+
+input,select{
+	width: 100%;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+}

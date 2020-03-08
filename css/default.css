@@ -1,5 +1,6 @@
 body {
 	background-color: #E5DDD5;
+	font-family: '微軟正黑體'!important;
 }
 
 input,select{
@@ -16,4 +17,8 @@ input,select{
 .center {
 	text-align: center;
 	margin: auto;
+}
+
+.left {
+	text-align: left;
 }

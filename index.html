@@ -242,8 +242,10 @@
 				</select>
 				<div class="left">Phone number 手機號碼</div>
 				<input type="tel" id="phonenum" pattern="([0-9]|&#8734;)+" required>
+				<div class="left">Message 訊息 (Optional 可留空)</div>
+				<textarea rows="5" id="textmsg"></textarea>
 				<br><br>
-				<button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #009688;" onClick="msg()">打開WhatsApp並且展開對話</button>
+				<button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #009688;" onClick="msg()">打開WhatsApp並展開對話<br><font size="3">Open WhatsApp and start a conversation</font></button>
 			</div>
 			<div class="col-sm center">
 				<!-- Text here! -->
@@ -255,6 +257,7 @@
 		function msg(){
 			var code = document.getElementById("code").options[document.getElementById("code").selectedIndex].value;
 			var phonenum = document.getElementById("phonenum").value;
+			var textmsg = document.getElementById("textmsg").value;
 			var check = /^[0-9]*$/;
 			var checkresult = check.test(phonenum);
 			
@@ -263,7 +266,7 @@
 				return
 			} else {
 				if (checkresult) {
-					window.location.href= "https://api.whatsapp.com/send?phone=" + code + phonenum;
+					window.location.href= "https://api.whatsapp.com/send?phone=" + code + phonenum + "&text=" + textmsg;
 				} else {
 					alert("Please type the phone number correctly!");
 				}

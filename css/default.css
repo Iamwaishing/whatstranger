@@ -3,7 +3,7 @@ body {
 	font-family: '微軟正黑體'!important;
 }
 
-input,select{
+input,select,textarea{
 	width: 100%;
 	border: 2px solid #aaa;
 	border-radius: 4px;

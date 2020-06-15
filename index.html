@@ -24,6 +24,7 @@
 			</div>
 			<div class="col-sm center">
 				<div class="left">Country Code 地區號碼</div>
+				<div style="display: inline-block;width: 75%">
 				<select id="code">
 					<option data-countryCode="US" value="1">USA (+1)</option>
 					<option data-countryCode="GB" value="44">UK (+44)</option>
@@ -240,6 +241,15 @@
 					<option data-countryCode="ZM" value="260">Zambia (+260)</option>
 					<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
 				</select>
+				</div>
+				<div style="display: inline-block;width: auto"><button id="re" class="btn btn-primary btn-block" style="background-color: #009688;">Default</button></div>
+				<script>
+					$(document).ready(function(){
+						$('#re').click(function(){
+							$('#code').prop('selectedIndex',84);
+						})
+					});
+				</script>
 				<div class="left">Phone number 手機號碼</div>
 				<input type="tel" id="phonenum" pattern="([0-9]|&#8734;)+" required>
 				<div class="left">Message 訊息 (Optional 可留空)</div>

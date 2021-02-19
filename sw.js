@@ -5,6 +5,8 @@ self.addEventListener('install', e => {
 			return cache.addAll(["./",
 							"./index.js",
 							"./css/default.css",
+							"./manifest.json",
+							"./sw.js",
 							"./images/whatsapp.png",
 							"./images/icon-72x72.png",
 							"./images/icon-96x96.png",
@@ -20,6 +22,8 @@ self.addEventListener('install', e => {
 });
 
 
-self.addEventListener("fetch", e => {
-	console.log(`inter for: ${e.request.url}`);
+self.addEventListener('fetch', (event) => {
+	event.respondWith(
+	  caches.match(event.request)
+	);
 });

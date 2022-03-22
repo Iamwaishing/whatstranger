@@ -281,7 +281,7 @@
 	<script>
 		function msg() {
 			var code = document.getElementById("code").options[document.getElementById("code").selectedIndex].value;
-			var phonenum = document.getElementById("phonenum").value;
+			var phonenum = document.getElementById("phonenum").value.trim().replace(" ", "");
 			var textmsg = document.getElementById("textmsg").value;
 			var check = /^[0-9]*$/;
 			var checkresult = check.test(phonenum);

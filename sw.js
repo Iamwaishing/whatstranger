@@ -1,7 +1,9 @@
+const cacheName = 'v1.0';
+
 // install cache
 self.addEventListener('install', e => {
 	e.waitUntil(
-		caches.open("v2").then(cache => {
+		caches.open(cacheName).then(cache => {
 			return cache.addAll(["./",
 				"./index.js",
 				"./css/default.css",
@@ -26,7 +28,7 @@ self.addEventListener('fetch', (event) => {
 	event.respondWith(
 		caches.match(event.request).then((resp) => {
 			return resp || fetch(event.request).then((response) => {
-				return caches.open('v1').then((cache) => {
+				return caches.open(cacheName).then((cache) => {
 					cache.put(event.request, response.clone());
 					return response;
 				});
@@ -37,7 +39,7 @@ self.addEventListener('fetch', (event) => {
 
 // update and delete old cache
 self.addEventListener('activate', (event) => {
-	var cacheKeeplist = ['v1'];
+	var cacheKeeplist = [cacheName];
 
 	event.waitUntil(
 		caches.keys().then((keyList) => {

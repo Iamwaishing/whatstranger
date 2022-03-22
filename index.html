@@ -24,6 +24,12 @@
 </head>
 
 <body>
+	<div class="snackContainer">
+		<div id="snackbar">
+			有更新！<a href="#" class="snackCorss" onclick="window.location.reload();">撳呢度</a> 刷新頁面更新啦！<a href="#"
+				style="margin-left: 10px;" onClick="this.parentNode.classList.remove('show');">&#10006;</a>
+		</div>
+	</div>
 	<nav class="navbar navbar-light" style="background-color: #009688;">
 		<span class="navbar-brand mb-0 h1 center" style="color: #FFF;">WhatStranger</span>
 	</nav>
@@ -279,6 +285,13 @@
 	</div>
 
 	<script>
+		// snakebar
+		function showUpdate() {
+			var x = document.getElementById("snackbar")
+			x.className = "show";
+			setTimeout(function () { x.className = x.className.replace("show", ""); }, 1000000);
+		}
+
 		function msg() {
 			var code = document.getElementById("code").options[document.getElementById("code").selectedIndex].value;
 			var phonenum = document.getElementById("phonenum").value.trim().replace(" ", "");
